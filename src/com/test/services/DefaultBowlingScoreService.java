@@ -7,7 +7,7 @@ import com.test.domain.BowlingScoreCard;
 import static com.test.domain.Frame.frame;
 
 public class DefaultBowlingScoreService implements BowlingScoreService {
-    private CommandLine commandLine;
+    private final CommandLine commandLine;
 
     public DefaultBowlingScoreService(CommandLine commandLine) {
         this.commandLine = commandLine;

@@ -5,7 +5,7 @@ import com.test.services.BowlingRules;
 public class Frame {
     static final Frame NULL_FRAME = frame(BowlingRules.FIRST_FRAME_NUMBER, 0, 0, 0);
 
-    private int frameNumber;
+    private final int frameNumber;
     private final int ball1;
     private final int ball2;
     private final int ball3;

@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.Set;
 
 public class BowlingScoreCard {
-    private Map<Bowler, ScoreCardLine> scoreCardLines = new HashMap<Bowler, ScoreCardLine>();
+    private final Map<Bowler, ScoreCardLine> scoreCardLines = new HashMap<Bowler, ScoreCardLine>();
 
     public BowlingScoreCard() {}
 
@@ -31,7 +31,7 @@ public class BowlingScoreCard {
     }
 
     public int bowlerScore(Bowler bowler) {
-        return scoreCardLines.get(bowler).score();
+        return scoreCardLines.get(bowler).totalScore();
     }
 
     @Override
@@ -41,12 +41,12 @@ public class BowlingScoreCard {
 
         BowlingScoreCard that = (BowlingScoreCard) o;
 
-        return !(scoreCardLines != null ? !scoreCardLines.equals(that.scoreCardLines) : that.scoreCardLines != null);
+        return scoreCardLines.equals(that.scoreCardLines);
     }
 
 
     @Override
     public int hashCode() {
-        return scoreCardLines != null ? scoreCardLines.hashCode() : 0;
+        return scoreCardLines.hashCode();
     }
 }

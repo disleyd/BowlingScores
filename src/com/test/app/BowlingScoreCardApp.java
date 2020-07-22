@@ -1,3 +1,5 @@
+package com.test.app;
+
 import com.test.dao.CommandLine;
 import com.test.dao.DefaultCommandLine;
 import com.test.domain.BowlingScoreCard;
@@ -8,7 +10,8 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 public class BowlingScoreCardApp {
-    private BowlingScoreService bowlingService;
+
+    private final BowlingScoreService bowlingService;
 
     public BowlingScoreCardApp(BowlingScoreService bowlingService) {
         this.bowlingService = bowlingService;
@@ -17,6 +20,7 @@ public class BowlingScoreCardApp {
     public static void main(String[] args) {
         BufferedReader in = new BufferedReader((new InputStreamReader(System.in)));
         CommandLine commandLine = new DefaultCommandLine(in, System.out);
+
         BowlingScoreService bowlingService = new DefaultBowlingScoreService(commandLine);
 
         BowlingScoreCardApp controller = new BowlingScoreCardApp(bowlingService);

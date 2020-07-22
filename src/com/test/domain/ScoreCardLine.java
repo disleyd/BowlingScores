@@ -8,7 +8,7 @@ import static com.test.domain.Frame.NULL_FRAME;
 
 public class ScoreCardLine {
 
-    private ArrayList<Frame> frames = new ArrayList<Frame>(BowlingRules.MAX_NUMBER_OF_FRAMES);
+    private final ArrayList<Frame> frames = new ArrayList<Frame>(BowlingRules.MAX_NUMBER_OF_FRAMES);
 
     public void addFrameScore(Frame frame) {
         if (frames.size() <= BowlingRules.MAX_NUMBER_OF_FRAMES) {
@@ -16,7 +16,7 @@ public class ScoreCardLine {
         }
     }
 
-    public int score() {
+    public int totalScore() {
         int totalScore = 0;
 
         for (int frameIndex = 0; frameIndex < frames.size(); frameIndex++) {
@@ -65,11 +65,11 @@ public class ScoreCardLine {
 
         ScoreCardLine that = (ScoreCardLine) o;
 
-        return !(frames != null ? !frames.equals(that.frames) : that.frames != null);
+        return frames.equals(that.frames);
     }
 
     @Override
     public int hashCode() {
-        return frames != null ? frames.hashCode() : 0;
+        return frames.hashCode();
     }
 }

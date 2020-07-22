@@ -1,7 +1,7 @@
 package com.test.domain;
 
 public class Bowler {
-    private String name;
+    private final String name;
 
     public Bowler(String name) {
         this.name = name;

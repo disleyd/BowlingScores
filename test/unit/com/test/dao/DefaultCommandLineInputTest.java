@@ -20,7 +20,7 @@ public class DefaultCommandLineInputTest {
     private CommandLine commandLine;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         inputStreamMock = mock(BufferedReader.class);
         outputStreamMock = mock(PrintStream.class);
         commandLine = new DefaultCommandLine(inputStreamMock, outputStreamMock);

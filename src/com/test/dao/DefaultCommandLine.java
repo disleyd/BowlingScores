@@ -30,8 +30,8 @@ public class DefaultCommandLine implements CommandLine {
     static final String BOWLER_NAME_HELP_MESSAGE = "Please enter upper and lowercase letters and spaces (no numbers, no punctuation)";
     static final String TWO_BALL_FRAME_SCORE_HELP_MESSAGE = "Please enter a frame score of " + BowlingRules.MAXIMUM_TWO_BALL_FRAME_SCORE + " or less";
 
-    private BufferedReader inputStream;
-    private PrintStream outputStream;
+    private final BufferedReader inputStream;
+    private final PrintStream outputStream;
 
     public DefaultCommandLine(BufferedReader inputStream, PrintStream outputStream) {
         this.inputStream = inputStream;
@@ -51,8 +51,7 @@ public class DefaultCommandLine implements CommandLine {
             outputStream.println(NUMBER_OF_BOWLERS_PROMPT);
             numberOfBowlers = readNumber();
 
-            if (numberOfBowlers == INVALID_NUMBER ||
-                    (numberOfBowlers < BowlingRules.MINIMUM_NUMBER_OF_BOWLERS || numberOfBowlers > BowlingRules.MAXIMUM_NUMBER_OF_BOWLERS)) {
+            if ((numberOfBowlers < BowlingRules.MINIMUM_NUMBER_OF_BOWLERS || numberOfBowlers > BowlingRules.MAXIMUM_NUMBER_OF_BOWLERS)) {
 
                 outputStream.println(INVALID_INPUT_MESSAGE);
                 outputStream.println(NUMBER_OF_BOWLERS_HELP_MESSAGE);
