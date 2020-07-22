@@ -23,8 +23,8 @@ public class BowlingScoreCardApp {
 
         BowlingScoreService bowlingService = new DefaultBowlingScoreService(commandLine);
 
-        BowlingScoreCardApp controller = new BowlingScoreCardApp(bowlingService);
-        controller.execute();
+        BowlingScoreCardApp bowlingApp = new BowlingScoreCardApp(bowlingService);
+        bowlingApp.execute();
     }
 
     private void execute() {
